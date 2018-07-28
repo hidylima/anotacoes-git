@@ -35,7 +35,7 @@ do Unix
 - Deve ser selecionado ao instalar ou reinstalar o sygwin, na opção  
 'devel $ default'
 
-# Comandos do Git 
+# Comandos iniciais do Git 
 - `git --version` mostra a versão do Git instalada 
 - `git` mostra alguns comandos de ajuda 
 - `git init` inicia um repositório do git 
@@ -43,13 +43,17 @@ do Unix
   - Esse diretório permite a inicialização e criação de históricos de  
   alterações dos arquivos
 - `git status` mostra o status da árvore atual do git
-  - Pode ser utilizado a qualquer momento 
+  - Pode ser utilizado a qualquer momento 1
+  - Mostra todos os arquivos alterados desde o último commit 
   - Mensagens
     - "Changes not staged for commit" indica que um arquivo já  
     adicionado à staging area anteriormente foi modificado. Ou seja,  
     o arquivo já faz parte do repositório .git, mas possui alterações 
     - "Changes to be committed:" indica que desta vez, há alterações  
     a serem commitadas
+    - Caso um novo arquivo tenha sido criado após o último commit,  
+    o arquivo será mostrado como 'untracked'. Ou seja, o arquivo ainda  
+    não está na staging area 
 
 # Estágios do Git 
 - Estágios são, basicamente, 3 momentos do projeto 
@@ -67,11 +71,18 @@ da árvore do git
 3. .git directory (Repository)
 
 ## `git add <file>` 
-- Passa um arquivo do Working Directory para o Staging Area 
-- Após executado, é exibida uma mensagem 'changes to be commited',  
-ou seja, a mensagem já não é de untracked files como anteriormente 
+- Passa arquivos do Working Directory para o Staging Area 
+  - Aceita vários arquivos por parâmetro, separados por espaço:  
+  `git add <file1> <file2>`
+- Após executado, caso um git status seja declarado, será exibida  
+uma mensagem 'changes to be commited', ou seja, a mensagem já não  
+é de untracked files como anteriormente 
 - Ou seja, agora o arquivo foi adicionado na staging area, mas  
 ainda não faz parte do .git directory (repositório)
+
+## `git add .`
+- Adiciona todos os arquivos alterados no Working Directory para  
+o Staging Area 
 
 ## Configurações pré-commit 
 - Os comandos abaixo precisam ser setados apenas uma única vez 
@@ -104,9 +115,11 @@ dizendo que o working directory está limpo será mostrada
 
 ## `git log`
 - Permite visualizar todos os commits adicionados no  
-repositório .git 
+repositório .git (histórico)
+  - Cada commit mostrado é uma versão do projeto 
 - Mostra uma hash que representa o commit feito, o nome e  
 e-mail de quem fez o commit, a data e horário e a mensagem  
+- O commit mais recente fica na parte superior da listagem 
 
 ## Arquivos do git directory modificados 
 - Ao modificar um arquivo anteriormente commitado para o  
@@ -120,8 +133,30 @@ modificados serão mostrados
 
 ## `git diff` 
 - diff: diferença de tudo o que foi feito no arquivo 
-- Permite visualizar as modificações feitas nos arquivos 
-do commit 
+- Permite visualizar as modificações entre os arquivos que  
+estão no working directory e no staging area, desde o último  
+`git add`
+
+## `git diff <file>` 
+- Permite visualizar as alterações feitas apenas do arquivo  
+especificado
+
+## `git diff --staged`
+- Mostra as alterações entre os arquivos de staging area e git  
+directory
+
+## `git log --name-status`
+- Exibe, o nome dos arquivos que foram alterados, além do hash  
+do commit, autor, data e mensagem de commit 
+  - A: add
+  - M: modified 
+
+## `git diff <commit1 commit2>`
+- Exibe as alterações feitas entre commits, através de suas  
+hashs 
+- Se quero saber quais alterações foram feitas desde o primeiro  
+commit até último, basta especificar o primeiro commit:  
+`git diff hashPrimeiroCommit`
 
 ## Cores e operadores nas linhas no git 
 - \- e Vermelho: Linha removida 
