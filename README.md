@@ -151,12 +151,15 @@ do commit, autor, data e mensagem de commit
   - A: add
   - M: modified 
 
-## `git diff <commit1 commit2>`
-- Exibe as alterações feitas entre commits, através de suas  
-hashs 
-- Se quero saber quais alterações foram feitas desde o primeiro  
-commit até último, basta especificar o primeiro commit:  
+## `git diff <hashCommit1 hashCommit2>`
+- Exibe as alterações feitas entre commits
+- É permitido colocar apenas os primeiros 7 caracteres da hash do commit 
+- Para saber quais alterações foram feitas **desde o primeiro commit**  
+até último, basta especificar o primeiro commit como parâmetro:  
 `git diff hashPrimeiroCommit`
+- Para **comparações entre 2 commits**, basta passar a hash do commit  
+mais recente como primeiro parâmetro e a hash do mais antigo como  
+segundo parâmetro 
 
 ## Cores e operadores nas linhas no git 
 - \- e Vermelho: Linha removida 
@@ -165,3 +168,26 @@ commit até último, basta especificar o primeiro commit:
 - Amarelo: arquivos que foram modificados e não foram adicionados  
 à stagin area 
   - Indica que o momento atual é o working directory 
+
+# Frequência entre commits
+- A cada alteração pequena e simples, é necessário fazer um commit 
+  - O recomendado é fazer um commit após uma pequena lógica  
+  implementada, por exemplo
+  - Isso permite voltar, facilmente, no tempo 
+  - Permite a visualização do que foi feito de data x até data y
+- A demora em fazer commits não é benéfica para o projeto
+- É importante entender que commits marcam breakpoints 
+  - Pontos específicos no tempo, no histórico, que é onde  
+  é possível voltar 
+
+# Utilização do Git em trabalhos diferentes de código 
+- TCC
+  - Em um TCC, em que várias alterações são requeridas,  
+  é uma ótima ideia commitar as alterações 
+    - Se algo que foi apagado precisa ser reescrito, por  
+    exemplo, o que foi apagado estará no histórico do Git 
+- Trabalhos acadêmicos 
+- Imagens 
+  - Neste caso, não é possível visualizar as alterações  
+  diretamente, no terminal 
+- **Qualquer coisa na vida que precise de um histórico**
