@@ -15,6 +15,7 @@ do Unix
 - `clear` limpa o terminal 
 - `mkdir` cria um diretório no diretório atual 
 - `touch nomeArquivo.extensao` cria um arquivo
+- `rm` deleta um arquivo do diretório atual 
 
 # O que é o Git 
 - Sistema de controle de versão 
@@ -150,6 +151,7 @@ directory
 do commit, autor, data e mensagem de commit 
   - A: add
   - M: modified 
+  - D: deleted 
 
 ## `git diff <hashCommit1 hashCommit2>`
 - Exibe as alterações feitas entre commits
@@ -191,3 +193,26 @@ segundo parâmetro
   - Neste caso, não é possível visualizar as alterações  
   diretamente, no terminal 
 - **Qualquer coisa na vida que precise de um histórico**
+
+# Removendo aquivos do working directory 
+- Se simplesmente um arquivo do **diretório atual** (working  
+directory) for deletado, ao rodar o git status, é exibido que  
+o arquivo foi deletado 
+
+# `git rm <file>`
+- Remove o arquivo do `.git` directory 
+- Após isso, um git status mostra que o arquivo foi removido e  
+que há alterações que precisam ser commitadas 
+  - Ou seja, o git add e o git status são utilizados para  
+  adicionar ou remover aquivos da staging area 
+  - Se deleted estiver verde e a menensagem "changes to be commited  
+  é mostrada", significa que já posso commitar 
+- A remoção do arquivo é adicionada, mas a ação que está sendo  
+feita é a remoção de um arquivo 
+- Mas, **o arquivo está no histórico**
+
+# Encontrando um arquivo excluído
+- É possível localizar, no histórico (`git log`), um commit que  
+ainda possua o arquivo deletado, executar um `git diff` com a  
+hash desse commit, e ver, em vermelho, as linhas do arquivo  
+excluído 
