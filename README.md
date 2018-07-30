@@ -66,9 +66,8 @@ do Unix
 - A primeira etapa a ser feita é passar o arquivo deste estágio para  
 o estágio 2 (Staging Area)
 2. Staging Area
-- Entra-se nesse momento à partir do momento em que se adiciona um  
-arquivo ao repositório do Git, fazendo com que o arquivo faça parte  
-da árvore do git 
+- Momento em que os arquivos foram adicionados, onde o próximo passo é  
+commitá-los (incluí-os) no `.git` directory 
 3. .git directory (Repository)
 
 ## `git add <file>` 
