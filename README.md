@@ -10,6 +10,10 @@ do Unix
   - `-la` parâmetro que lista os arquivos e pastas do diretório  
   atual, inclusive os ocultos. Nos sistemas Unix, todo diretório  
   que começa com `.` não é mostrado 
+  - `-l` parâmetro que mostra os arquivos com mais detalhes 
+    - Data da última alteração
+    - Tamanho
+    - Usuário
 - `cd cygdrive` entra no root do windows 
   - `ls` lista os discos rígidos do windows 
 - `clear` limpa o terminal 
@@ -58,8 +62,8 @@ do Unix
 
 # Estágios do Git 
 - Estágios são, basicamente, 3 momentos do projeto 
-
 ![estagios-git](https://user-images.githubusercontent.com/29297788/43348687-b9edea20-91d1-11e8-843d-16369b268a44.jpg)
+
 
 1. Working Directory
 - É o diretório atual em que se está trabalhando 
@@ -83,6 +87,7 @@ ainda não faz parte do .git directory (repositório)
 ## `git add .`
 - Adiciona todos os arquivos alterados no Working Directory para  
 o Staging Area 
+- Não adiciona arquivos deletados 
 
 ## Configurações pré-commit 
 - Os comandos abaixo precisam ser setados apenas uma única vez 
@@ -146,11 +151,11 @@ especificado
 directory
 
 ## `git log --name-status`
-- Exibe, o nome dos arquivos que foram alterados, além do hash  
-do commit, autor, data e mensagem de commit 
-  - A: add
-  - M: modified 
-  - D: deleted 
+- Exibe, o nome dos arquivos que foram alterados ou excluídos,  
+além do hash do commit, autor, data e mensagem de commit 
+  - A: add. Arquivos que foram adicionados 
+  - M: modified. Arquivos que foram modificados 
+  - D: deleted. Arquivos que foram deletados 
 
 ## `git diff <hashCommit1 hashCommit2>`
 - Exibe as alterações feitas entre commits
@@ -209,9 +214,24 @@ que há alterações que precisam ser commitadas
 - A remoção do arquivo é adicionada, mas a ação que está sendo  
 feita é a remoção de um arquivo 
 - Mas, **o arquivo está no histórico**
+  - Executando o comando `git log --name-status`
+- Ao remover o arquivo apenas com o `rm nomeArquivo` e executar um  
+`git status`, é mostrado que há mudanças que não estão no stage area,  
+ou seja, não foram commitadas
 
 # Encontrando um arquivo excluído
 - É possível localizar, no histórico (`git log`), um commit que  
 ainda possua o arquivo deletado, executar um `git diff` com a  
 hash desse commit, e ver, em vermelho, as linhas do arquivo  
 excluído 
+
+# Adicionando um arquivo à staging area 
+
+# `git add --all` ou `git add -A`
+- Faz com que todas as ações que foram feitas no working directory  
+sejam adicionadas
+  - Arquivos novos
+  - Arquivos deletados
+  - Arquivos modificados
+- Evita o uso do `git add arquivo` pro arquivo modificado e `git rm`  
+para os arquivos deletados 
