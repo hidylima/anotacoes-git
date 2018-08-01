@@ -8,18 +8,20 @@ do Unix
 - `cd /` change directory to root 
 - `ls` lista as pastas do diretório atual 
   - `-la` parâmetro que lista os arquivos e pastas do diretório  
-  atual, inclusive os ocultos. Nos sistemas Unix, todo diretório  
-  que começa com `.` não é mostrado 
-  - `-l` parâmetro que mostra os arquivos com mais detalhes 
-    - Data da última alteração
-    - Tamanho
-    - Usuário
+  atual, **inclusive os ocultos**. Nos sistemas Unix, todo diretório  
+  que começa com `.` é um arquivo oculto 
+  - `-l` parâmetro que mostra apenas os arquivos visíveis 
+    - Mostra os arquivos com mais detalhes 
+      - Data da última alteração
+      - Tamanho
+      - Usuário
 - `cd cygdrive` entra no root do windows 
   - `ls` lista os discos rígidos do windows 
 - `clear` limpa o terminal 
 - `mkdir` cria um diretório no diretório atual 
 - `touch nomeArquivo.extensao` cria um arquivo
 - `rm` deleta um arquivo do diretório atual 
+- `cat` mostra, no terminal, o conteúdo de um arquivo 
 
 # O que é o Git 
 - Sistema de controle de versão 
@@ -59,6 +61,12 @@ do Unix
     - Caso um novo arquivo tenha sido criado após o último commit,  
     o arquivo será mostrado como 'untracked'. Ou seja, o arquivo ainda  
     não está na staging area 
+
+# Untracked files
+- São arquivos que foram criados e ainda não foram adicionados à staging  
+area e nem fazem parte do `.git` directory 
+- Se um arquivo que já faz parte da staging area for alterado, a mensagem  
+é que o arquivo foi **modificado**
 
 # Estágios do Git 
 - Estágios são, basicamente, 3 momentos do projeto 
@@ -225,8 +233,6 @@ ainda possua o arquivo deletado, executar um `git diff` com a
 hash desse commit, e ver, em vermelho, as linhas do arquivo  
 excluído 
 
-# Adicionando um arquivo à staging area 
-
 # `git add --all` ou `git add -A`
 - Faz com que todas as ações que foram feitas no working directory  
 sejam adicionadas
@@ -235,3 +241,27 @@ sejam adicionadas
   - Arquivos modificados
 - Evita o uso do `git add arquivo` pro arquivo modificado e `git rm`  
 para os arquivos deletados 
+
+# `.gitignore`
+- Ignora alguns arquivos do repositório 
+  - Arquivos que, mesmo sendo necessários no projeto,  
+  não devem ser commitados, por exemplo
+  - Estes arquivos devem ser adicionados ao `.gitignore`
+- Deve estar na raiz do projeto 
+- Arquivo conhecido, no mundo do Linux, como dot file 
+  - Lembrando que, no Linux, todos os arquivos que  
+  começam com `.` são ocultos
+
+Exemplo em arquivos node JS: 
+- Para se trabalhar com o node, primeiramene é necessário um arquivo  
+`package.json`
+- Ao criar esse arquivo, e executar um `git status`, é mostrada uma  
+mensagem dizendo que `package.json` não foi adicionado à staging area  
+e não faz parte do `.git` directory (untracked file)
+- Existem arquivos do node que precisam existir no projeto, mas não  
+é necessário que eles sejam versionados 
+- Se o Gulp é instalado localmente, por exemplo, com o comando  
+`npm i --save-dev gulp`
+  - Ele irá baixar o gulp, criar um diretório `node_modules` e, nesse  
+  diretório, haverá o projeto do gulp disponível para ser utilizado no  
+  projeto local 
