@@ -21,7 +21,11 @@ do Unix
 - `mkdir` cria um diretório no diretório atual 
 - `touch nomeArquivo.extensao` cria um arquivo
 - `rm` deleta um arquivo do diretório atual 
+- `rm -r` deleta um diretório 
 - `cat` mostra, no terminal, o conteúdo de um arquivo 
+- `echo` imprime uma string dentro de um arquivo 
+  - `echo "uma string" >> nomeArquivo.extensao`
+    - Se o arquivo não existir, ele é criado 
 
 # O que é o Git 
 - Sistema de controle de versão 
@@ -67,6 +71,9 @@ do Unix
 area e nem fazem parte do `.git` directory 
 - Se um arquivo que já faz parte da staging area for alterado, a mensagem  
 é que o arquivo foi **modificado**
+- Se um arquivo ou pasta é criado e deletado sem ter sido adicionado à  
+staging area (`git add`), ao dar um `git status`, o arquivo não será  
+mostrado como deletado 
 
 # Estágios do Git 
 - Estágios são, basicamente, 3 momentos do projeto 
@@ -247,10 +254,15 @@ para os arquivos deletados
   - Arquivos que, mesmo sendo necessários no projeto,  
   não devem ser commitados, por exemplo
   - Estes arquivos devem ser adicionados ao `.gitignore`
+    - `echo "node_modules" >> .gitignore`
 - Deve estar na raiz do projeto 
 - Arquivo conhecido, no mundo do Linux, como dot file 
   - Lembrando que, no Linux, todos os arquivos que  
   começam com `.` são ocultos
+- Para adicionar múltiplos arquivos e pastas, basta inserir  
+os nomes apenas com quebra de linhas 
+- É importante que os arquivos não tenham sido adicionados  
+à staging area antes de serem listados no `.gitignore`
 
 Exemplo em arquivos node JS: 
 - Para se trabalhar com o node, primeiramene é necessário um arquivo  
@@ -264,4 +276,25 @@ e não faz parte do `.git` directory (untracked file)
 `npm i --save-dev gulp`
   - Ele irá baixar o gulp, criar um diretório `node_modules` e, nesse  
   diretório, haverá o projeto do gulp disponível para ser utilizado no  
-  projeto local 
+  meu projeto local 
+  - O `package.json`, após um pacote do node ser instalado, o pacote  
+  é adicionado automaticamente como dependência do projeto
+    - Para instalar as dev dependencies do node, basta executar  
+    `npm install` e ele irá instalar os pacotes que estão dentro  
+    do `package.json`
+    - Ou seja, geralmente, o node_modules não precisa ser versionado  
+    no projeto. 
+- Então, após a instalação, o git status mostra que `node_modules` e  
+`package.json` são arquivos não-trackeados
+- É possível remover, a `node_modules` e, tudo o que tiver como  
+dependência de desenvolvimento dentro de `package.json` pode ser  
+instalado novamente com o comando `npm install`
+  - Ou seja, o projeto pode ter apenas o `package.json`. O  
+  `node_modules` não é necessário 
+    - `node_modules` possui muitos arquivos que irão deixar o projeto  
+    grande 
+- Sempre que esse projeto precisar ser baixado, basta executar o  
+`npm install` e, automaticamente, o npm irá criar a `node_modules`  
+já com as ferramentas que eu preciso, dentro dele 
+- Porém, como o node_modules é necessário enquanto eu estiver  
+desenvolvendo
