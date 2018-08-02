@@ -298,3 +298,16 @@ instalado novamente com o comando `npm install`
 já com as ferramentas que eu preciso, dentro dele 
 - Porém, como o node_modules é necessário enquanto eu estiver  
 desenvolvendo
+
+# Arquivos ou diretórios commitados acidentalmente, antes de serem incluídos no `.gitignore`
+- Um exemplo recorrente é o commit do `node_modules`, por exemplo 
+  - Se o arquivo que não era para ser commitado for incluído no  
+  `.gitignore` após o commit, e, o `git add` for executado novamente,  
+  aparentemente está tudo ok. 
+    - Ao instalar um outro módulo e executar `git log --name-status`,  
+    é mostrado que o `node_modules` continua no `.git` repository 
+    - Utilizar `rm -r node_modules` também é uma tentativa 
+      - Ao executar o git status, é mostrado que `node_modules`  
+      está sendo deletada
+      - Agora, ao dar um `git add -A` e um git status, é mostrado  
+      que `node_modules` foi deletado do `.git` directory 
