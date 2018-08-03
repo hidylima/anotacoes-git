@@ -249,6 +249,9 @@ sejam adicionadas
 - Evita o uso do `git add arquivo` pro arquivo modificado e `git rm`  
 para os arquivos deletados 
 
+# `git add -f nomeArquivo`
+- Força o commit de um arquivo que esteja no `.gitignore`
+
 # `.gitignore`
 - Ignora alguns arquivos do repositório 
   - Arquivos que, mesmo sendo necessários no projeto,  
@@ -300,14 +303,30 @@ já com as ferramentas que eu preciso, dentro dele
 desenvolvendo
 
 # Arquivos ou diretórios commitados acidentalmente, antes de serem incluídos no `.gitignore`
-- Um exemplo recorrente é o commit do `node_modules`, por exemplo 
+- Um exemplo recorrente é o commit do `node_modules`
   - Se o arquivo que não era para ser commitado for incluído no  
-  `.gitignore` após o commit, e, o `git add` for executado novamente,  
+  `.gitignore` após o commit e, o `git add` for executado novamente,  
   aparentemente está tudo ok. 
     - Ao instalar um outro módulo e executar `git log --name-status`,  
     é mostrado que o `node_modules` continua no `.git` repository 
-    - Utilizar `rm -r node_modules` também é uma tentativa 
+    - É possível utilizar `rm -r node_modules` 
       - Ao executar o git status, é mostrado que `node_modules`  
-      está sendo deletada
+      está sendo deletado
       - Agora, ao dar um `git add -A` e um git status, é mostrado  
       que `node_modules` foi deletado do `.git` directory 
+      - Então, é possível commitar, passando a mensagem de que  
+      `node_modules` foi removida 
+      - Agora, caso um pacote seja instalado e a node_modules criada,  
+      nada será adicionado ao `.git` directory, pois node_modules já  
+      está no `.gitignore`
+      - Se após os passos acima, o arquivo que estiver listado no  
+      `.gitignore` não poderá mais ser adicionado com o `git add`, e  
+      uma mensagem de erro será exibida 
+
+# `git rm -rf nomeArquivo --cached` - Removendo um arquivo da staging area sem deletá-lo do working directory 
+- Se a node_modules for commitada para a staging area, acidentalmente,  
+é possível removê-la sem a necessidade de deleta-la do diretório atual  
+(working directory)
+  - Útil quando já houver vários módulos instalados 
+- Após a execução do comando, o arquivo será removido do `.git` directory  
+e será listado como untracked, no git status 
