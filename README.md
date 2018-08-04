@@ -86,7 +86,7 @@ mostrado como deletado
 o estágio 2 (Staging Area)
 2. Staging Area
 - Momento em que os arquivos foram adicionados, onde o próximo passo é  
-commitá-los (incluí-os) no `.git` directory 
+commitá-los (incluí-los) no `.git` directory 
 3. .git directory (Repository)
 
 ## `git add <file>` 
@@ -330,3 +330,28 @@ desenvolvendo
   - Útil quando já houver vários módulos instalados 
 - Após a execução do comando, o arquivo será removido do `.git` directory  
 e será listado como untracked, no git status 
+
+# Adicionando ao .gitignore arquivos que já estão na staging area 
+1. Adicionar o nome do arquivo no `.gitignore`
+2. Remover o arquivo da staging area
+  - `git rm nomeDoArquivo --cached` ou, no caso de diretórios,  
+  `git rm -rf nomeDoArquivo --cached`
+    - --cached não deletará o arquivo ou diretório do working directory 
+3. Ao dar um git status, é mostrado que o arquivo foi deletado 
+  1. Um git diff --staged pode ser executado para confirmar 
+  2. Agora o arquivo não é mais mostrado como untracked 
+
+# `git commit -a -m "message..."` ou `git commit -am "message..."`, no Linux - Pulando a etapa de commitar um arquivo para a staging area 
+- Caso o arquivo **alterado** já faça parte do .git directory,  
+o comando fez o commit e a adição 
+- É um comando perigoso. É recomendado, sempre, usar o  
+`git add nomeArquivo` ou `git add .` e depois o `git commit -m "mensagem"`
+
+# `~/.gitignore` - Utilizando o .gitignore na raiz de usuário 
+- É possível colocar um arquivo .gitignore na pasta de usuário  
+  - windows: (c/Users/roger)
+  - unix:  
+    - `touch ~/.gitignore` 
+      - `~` representa a pasta de usuário
+    - Incluir arquivos a serem ignorados
+    - 
