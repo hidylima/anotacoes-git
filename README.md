@@ -26,6 +26,7 @@ do Unix
 - `echo` imprime uma string dentro de um arquivo 
   - `echo "uma string" >> nomeArquivo.extensao`
     - Se o arquivo não existir, ele é criado 
+- `/cygdrive/c/Users/roger/` acessa o diretório de usuário
 
 # O que é o Git 
 - Sistema de controle de versão 
@@ -121,6 +122,12 @@ repositório .git
 ### `git config -l` ou `git config --list`
 - Lista as configurações 
 - Verifica se os comandos setados funcionaram corretamente 
+
+### `git config user.name` 
+- Mostra meu nome de usuário cadastrado
+
+### `git config user.email` 
+- Mostra meu e-mail cadastrado
 
 ## `git commit -m "Commit Message"`
 - Passa o arquivo da staging area para o .git directory 
@@ -354,4 +361,24 @@ o comando fez o commit e a adição
     - `touch ~/.gitignore` 
       - `~` representa a pasta de usuário
     - Incluir arquivos a serem ignorados
-    - 
+      - Ao dar um git status, o arquivo incluído no .gitignore  
+      ainda é mostrado como untracked
+    - Para funcionar, é necessário executar o comando abaixo 
+
+# `git config --global core.excludesfile /cygdrive/c/Users/roger/.gitignore` - Configurando um `.gitignore` padrão para todos os projetos presentes na máquina 
+- Na primeira vez que executado, não mostra nada, pois ainda não  
+há excludes file nele
+- Posso então configurar, no meu diretório de usuário, o  
+core.excludesfile, passando como parâmetro o .gitignore de  
+usuário: 
+  - `git config --global core.excludesfile /cygdrive/c/Users/roger/.gitignore`
+    - O core.excludesfile disse para que o git configurasse um  
+    `.gitignore` padrão para todos os projetos instalados nessa  
+    máquina
+      - É possível portanto, ignorar o node_modules de todos  
+      os projetos nesta máquina, sem a necessidade de ficar  
+      adicionando ele no `.gitignore` de cada arquivo 
+      - Ideal para arquivos específicos recorrentes 
+    - Agora, ao dar um git status, os arquivos listados no  
+    .gitignore da pasta de usuário fez com que esses arquivos  
+    fossem ignorados no working directory
