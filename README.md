@@ -123,15 +123,40 @@ repositório .git
 - Lista as configurações 
 - Verifica se os comandos setados funcionaram corretamente 
 
-### `git config user.name` 
-- Mostra meu nome de usuário cadastrado
+### `git config <property>` 
+- algumas propriedades possíveis 
+  - `user.name`
+    - Mostra meu nome de usuário cadastrado
+  - `user.email`
+    - Mostra meu e-mail cadastrado
+  - `core.editor`
+    - Mostra o editor de texto padrão para a edição de mensagens  
+    de commits 
 
-### `git config user.email` 
-- Mostra meu e-mail cadastrado
+## `git commit` - Commitando sem o parâmetro `-m`
+- Se este comando for executado, o editor de texto será aberto  
+para que a mensagem de commit possa ser editada 
+  - Edição possível: 
+    - Título da mensagem de commit (1ª linha)
+    - Corpo da mensagem de commit
+      - Pode ser uma lista: 
+       - Item 1
+       - Item 2
+       - Item 3...
+- Permite detalhar melhor o que foi feito naquele commit 
+- Após editar a mensagem e dar um `git log`, o commit mais  
+organizado é mostrado no terminal 
+  - Muito importante ao usar o GitHub 
+
+## Setando o editor da mensagem de commit para todos os projetos 
+- 
 
 ## `git commit -m "Commit Message"`
 - Passa o arquivo da staging area para o .git directory 
 - Limpa o working directory 
+- Ideal para **mensagens pequenas**
+  - O `git commit` (sem `-m`) deve ser usado para mensagens  
+  detalhadas 
 - A mensagem a ser colocada deve ser informativa, que diga  
 exatamente qual alteração foi feita e porque ela foi feita 
 - Após a execução do comando, serão mostradas uma hash que foi  
@@ -382,3 +407,4 @@ usuário:
     - Agora, ao dar um git status, os arquivos listados no  
     .gitignore da pasta de usuário fez com que esses arquivos  
     fossem ignorados no working directory
+
