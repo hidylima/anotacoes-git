@@ -179,6 +179,38 @@ repositório .git (histórico)
 e-mail de quem fez o commit, a data e horário e a mensagem  
 - O commit mais recente fica na parte superior da listagem 
 
+## `git log --name-status`
+- Além das informações presentes no `git log` padrão, exibe,  
+o nome dos arquivos que foram alterados ou excluídos, além do  
+hash do commit, autor, data e mensagem de commit 
+  - A: add. Arquivos que foram adicionados 
+  - M: modified. Arquivos que foram modificados 
+  - D: deleted. Arquivos que foram deletados 
+- Auxilia a visualização em casos onde é necessário voltar ao  
+histórico do projeto 
+
+## `git log --pretty=oneline`
+- Mostra os os commits de forma "bonitinha", em uma única linha 
+  - Mostra apenas o texto do commit 
+
+## `git log --abbrev-commit`
+- Abrevia a mensagem de commit 
+  - Exibe apenas os 7 primeiros caracteres das hashs dos commits 
+
+## `git log --stat`
+- Exibe algumas estatísticas do log 
+
+## `git log -p`
+- Exibe as alterações feitas nos arquivos 
+  - `git log -p -3` exibe a quantidade de commits especificada por  
+  parâmetro
+
+## Combinando git logs 
+- É possível combinar, por exemplo, o `--pretty=oneline` com o  
+`abbrev-commit`:
+  - `git log --pretty=oneline --abbrev-commit`
+  - Exibe os commits em uma única linha, de forma abreviada 
+
 ## Arquivos do git directory modificados 
 - Ao modificar um arquivo anteriormente commitado para o  
 .git directory, essas alterações do arquivo voltam para o  
@@ -202,13 +234,6 @@ especificado
 ## `git diff --staged`
 - Mostra as alterações entre os arquivos de staging area e git  
 directory
-
-## `git log --name-status`
-- Exibe, o nome dos arquivos que foram alterados ou excluídos,  
-além do hash do commit, autor, data e mensagem de commit 
-  - A: add. Arquivos que foram adicionados 
-  - M: modified. Arquivos que foram modificados 
-  - D: deleted. Arquivos que foram deletados 
 
 ## `git diff <hashCommit1 hashCommit2>`
 - Exibe as alterações feitas entre commits
