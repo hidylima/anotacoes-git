@@ -149,7 +149,13 @@ organizado é mostrado no terminal
   - Muito importante ao usar o GitHub 
 
 ## Setando o editor da mensagem de commit para todos os projetos 
-- 
+- No Windows, o recomendado é o Vim
+
+## Comandos do Vim para a edição da mensagem de commit
+- `i` entra no insert mode, para que o código / mensagem seja  
+inserida
+- `esc` sai do modo de inserção
+- `:wq + enter` sai do vim 
 
 ## `git commit -m "Commit Message"`
 - Passa o arquivo da staging area para o .git directory 
