@@ -75,6 +75,9 @@ area e nem fazem parte do `.git` directory
 - Se um arquivo ou pasta é criado e deletado sem ter sido adicionado à  
 staging area (`git add`), ao dar um `git status`, o arquivo não será  
 mostrado como deletado 
+- O git, por padrão, não faz commit de diretórios vazios
+  - É necessário que o diretório tenha, pelo menos, um  
+  arquivo 
 
 # Estágios do Git 
 - Estágios são, basicamente, 3 momentos do projeto 
@@ -439,3 +442,31 @@ usuário:
     .gitignore da pasta de usuário fez com que esses arquivos  
     fossem ignorados no working directory
 
+# Branches
+- Ramificações do projeto
+  - Cada ramificação é uma cópia do projeto 
+- Servem para os casos em que é necessário criar, por exemplo,  
+uma nova feature no projeto 
+  - Exemplos: 
+    - Adicionar CSS em um componente
+  - Criam um ambiente separado do ambiente principal (master)
+- Evitam que alterações sejam feitas na branch master, pois ela  
+é a branch padrão do git 
+- São criadas com base na branch atual 
+  - A branch será criada com o mesmo conteúdo e histórico da  
+  branch atual 
+  - Os arquivos também serão "copiados" (na verdade, serão  
+  referenciados)
+- Tudo o que é alterado em uma branch, não afeta a outra, pois  
+cada branch é um ambiente completamente separado 
+
+# `git branch`
+- Lista as branches existentes no projeto 
+
+# `git branch <branchName>`
+- Cria uma nova branch 
+- Caso a branch já exista, uma mensagem de erro será exibida  
+e a branch não será criada 
+
+# `git checkout <branchName>`
+- Troca de branch 
