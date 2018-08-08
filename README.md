@@ -500,6 +500,20 @@ e a branch não será criada
 # `git checkout <branchName>`
 - Troca de branch 
 
+# `git checkout -b <branchName>`
+- Atalho que cria e já acessa uma branch 
+- `-b` = branch
+- `checkout` = muda de branch 
+
+# `git branch -m <newBranchName>`
+- Renomeia uma branch 
+- É necessário estar dentro da branch a ser renomeada 
+
+# `git branch -D <branchName> <branchName2> <branchName3>`
+- Remove uma ou múltiplas branches 
+- Útil em casos onde é necessário apagar branches de features que  
+já foram mergeadas na branch principal (dev)
+
 # `git merge <branchName>` - Unindo alterações entre branches diferentes 
 - **Estando na branch master**, git merge recebe o nome da branch  
 a ser unida à master 
