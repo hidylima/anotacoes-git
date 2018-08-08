@@ -451,7 +451,8 @@ uma nova feature no projeto
     - Adicionar CSS em um componente
   - Criam um ambiente separado do ambiente principal (master)
 - Evitam que alterações sejam feitas na branch master, pois ela  
-é a branch padrão do git 
+é a branch padrão do git, a branch que apresenta o ambiente  
+final
 - São criadas com base na branch atual 
   - A branch será criada com o mesmo conteúdo e histórico da  
   branch atual 
@@ -459,14 +460,46 @@ uma nova feature no projeto
   referenciados)
 - Tudo o que é alterado em uma branch, não afeta a outra, pois  
 cada branch é um ambiente completamente separado 
+- É importante não trabalhar na branch principal, mesmo ao  
+trabalhar sozinho
+  - Fazer com que cada branch seja uma feature a ser adicionada  
+  no projeto 
+  - A branch master deve conter apenas o conteúdo mais atualizado  
+  possível
+  - Possibilidades e recomendações: 
+    - Criar uma branch 'dev', que será a branch padrão para  
+    desenvolver e criar alterações no projeto. Essa branch, deve  
+    ser tratada como a branch master de desenvolvimento. Tudo o  
+    que é beta deve estar nela. 
+      - Baseado na branch dev, é possível criar uma branch chamada  
+      'js', por exemplo, onde serão feitas features em JavaScript 
+      - Após codar a feature, dar um git commit 
+        - Se for o momento, um git checkout pode ser executado  
+        para a branch 'dev' e a branch js pode ser mergeada com  
+        a branch dev
+      - Ou seja, é possível editar os arquivos de javascript em  
+      uma branch específica para eles. O mesmo acontece com o  
+      html e css. 
+    - O que deve ser mergeado para a master são apenas as  
+    **coisas finais do projeto**. Ela será sempre a versão mais  
+    estável do projeto. A versão final. 
+      - Assim, se der algum problema ou qualquer tipo de erro, o  
+      erro não ficará na master 
 
 # `git branch`
 - Lista as branches existentes no projeto 
 
 # `git branch <branchName>`
-- Cria uma nova branch 
+- Cria uma nova branch, baseada na branch em que eu estava  
+anteriormente
+  - Os da logs da branch anterior permanecem na nova branch.  
+  Os arqiuvos também são os mesmos. 
 - Caso a branch já exista, uma mensagem de erro será exibida  
 e a branch não será criada 
 
 # `git checkout <branchName>`
 - Troca de branch 
+
+# `git merge <branchName>` - Unindo alterações entre branches diferentes 
+- **Estando na branch master**, git merge recebe o nome da branch  
+a ser unida à master 
