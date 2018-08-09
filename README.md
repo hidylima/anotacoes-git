@@ -514,6 +514,24 @@ e a branch não será criada
 - Útil em casos onde é necessário apagar branches de features que  
 já foram mergeadas na branch principal (dev)
 
+# `git checkout --orphan <branchName>`
+- Cria e troca para uma nova branch vazia 
+- Útil em casos onde é necessária a criação de um histórico novo ou  
+é desejável manter duas diferentes estruturas no projeto. Exemplo: 
+  - Uma com o código do projeto em si 
+  - Outra com os arquivos estáticos do site do projeto 
+  - Como os dois casos acima fazem parte do mesmo projeto, não é  
+  necessário criar um repositório separado para cada um 
+- A branch não será baseada em alguma outra  
+- O git log estará limpo, os arquivos saem do estado do git  
+repository e vão para o staging area, como se tivessem acabado de  
+terem sido adicionados com o git add 
+  - Há a opção de reutilizar os arquivos (commitar) ou removê-los  
+  com o `git rm -rf .`, para remover todos os arquivos da staging  
+  area
+  - Lembrando que a nova branch orfã nunca será mergeada com a branch  
+  principal 
+
 # `git merge <branchName>` - Unindo alterações entre branches diferentes 
 - **Estando na branch master**, git merge recebe o nome da branch  
 a ser unida à master 
