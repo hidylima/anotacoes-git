@@ -83,15 +83,17 @@ mostrado como deletado
 - Estágios são, basicamente, 3 momentos do projeto 
 ![estagios-git](https://user-images.githubusercontent.com/29297788/43348687-b9edea20-91d1-11e8-843d-16369b268a44.jpg)
 
-
 1. Working Directory
-- É o diretório atual em que se está trabalhando 
-- A primeira etapa a ser feita é passar o arquivo deste estágio para  
-o estágio 2 (Staging Area)
+  - É o diretório atual em que se está trabalhando 
+  - A primeira etapa a ser feita é adicionar o arquivo deste estágio para  
+  o estágio 2 (Staging Area)
 2. Staging Area
-- Momento em que os arquivos foram adicionados, onde o próximo passo é  
-commitá-los (incluí-los) no `.git` directory 
+  - Momento em que os arquivos foram adicionados, onde o próximo passo é  
+  commitá-los (incluí-los) no `.git` directory 
 3. .git directory (Repository)
+  - Este repositório é local, fica apenas na máquina que está sendo  
+  usada. Ninguém tem acesso ao repositório. 
+  - Guarda todo o histórico de commits do projeto 
 
 ## `git add <file>` 
 - Passa arquivos do Working Directory para o Staging Area 
@@ -535,3 +537,40 @@ terem sido adicionados com o git add
 # `git merge <branchName>` - Unindo alterações entre branches diferentes 
 - **Estando na branch master**, git merge recebe o nome da branch  
 a ser unida à master 
+
+# Criando repositórios 
+- O conceito de ter repositórios é a possibilidade de centralizar  
+os arquivos em um só lugar, para que outras pessoas também possam  
+colaborar com o projeto 
+- Possibilita que as alterações feitas sejam enviadas para um local  
+onde haja um gerenciamento de todo o histórico dos commits do projeto 
+  - O repositório possibilita que Designers, Front-end developers e  
+  Back-end developers trabalhem no mesmo repositório
+- Repositórios devem ter o mesmo nome do projeto, com `.git` no final
+- Lembrando que, na maior parte dos casos, o repositório não será local,  
+como neste exemplo didático, mas sim, no GitHub. 
+  - Não faz sentido manter o projeto em um repositório local, ao  
+  invés de hospedar no GitHub
+
+# `git init --bare` 
+- Cria um repositório no git, ao ser executado no diretório que será  
+o repositório do projeto 
+- Ao listar os arquivos e diretórios do repositório, é notável que ele  
+não criou um diretório `.git`, pois na verdade, este repositório já é,  
+teoricamente, um diretório `.git`
+  - Ele cria, no repositório, basicamente a mesma estrutura de  
+  diretórios de um diretório `.git`
+- Este repositório `.git` nada mais é do que o próprio repositório do  
+projeto, porém, de forma local
+- Ao executar esse comando, o repositório `.git` criado é um caminho  
+aonde é possivel enviar os arquivos do projeto e centralizá-los
+
+# `git remote add <origin> <pathToRepositoryToInsertFiles>` - Adicionando um repositório ao projeto 
+- Deve ser executado dentro do diretório do projeto 
+  - Por convenção, o repositório do projeto é chamado de 'origin'
+- No repositório `.git`, ao executar o comando `pwd`, será retornado  
+o caminho do repositório onde os arquivos devem ser inseridos 
+- Linka o repositório do projeto com o repositório `.git`
+
+# `git remote -v`
+- Exibe os repositórios origin fetch e o origin push
