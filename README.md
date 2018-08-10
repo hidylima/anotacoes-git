@@ -553,8 +553,8 @@ como neste exemplo didático, mas sim, no GitHub.
   invés de hospedar no GitHub
 
 # `git init --bare` 
-- Cria um repositório no git, ao ser executado no diretório que será  
-o repositório do projeto 
+- Cria um repositório no git, ao ser executado dentro diretório que será  
+o repositório do projeto (exemplo abaixo, ao falar sobre `git clone`)
 - Ao listar os arquivos e diretórios do repositório, é notável que ele  
 não criou um diretório `.git`, pois na verdade, este repositório já é,  
 teoricamente, um diretório `.git`
@@ -594,3 +594,29 @@ Exemplo:
 # `git clone <repositoryName>` - Clonando um repositório existente 
 - Clonar um repositório é uma das vantagens em manter um repositório  
 onde outras pessoas possam acessá-lo
+- Exemplo: 
+  - Tenho uma pasta chamada time. Dentro dela, outras pastas de cada  
+  membro do time + a pasta 'servidor', onde irá ficar o repositório  
+  `.git` do projeto 
+  - Dentro da pasta 'servidor', posso criar um repositório  
+  `ecommerce.git`, com o comando `mkdir ecommerce.git`
+  - Dentro da pasta `ecommerce.git`, posso executar o comando  
+  `git init --bare`
+  - A partir de agora, `ecommerce.git` será o repositório principal,  
+  onde a coisas do projeto serão compartilhadas 
+  - Posso então sair da pasta deste repositório (`ecommerce.git`) e  
+  voltar 2 níveis, para acessar a pasta 'time' e então, acessar a  
+  minha pasta 'roger'
+  - Dentro da minha pasta, que representa meu computador local, posso  
+  criar o diretório principal do ecommerce e começar a trabalhar nele.  
+  Existem duas formas de se criar este repositório: 
+    - Executar o `mkdir ecommerce`, acessá-lo e, dentro dele, iniciar  
+    um repositório `.git` com o comando `git init`
+    - Agora, é só linkar o meu repositorio `ecommerce` com o  
+    repositório que está no servidor. 
+    - Posso então executar um `pwd` dentro do repositório do servidor,  
+    para copiar o caminho dele. 
+    - Agora, basta estar dentro desse meu repositório `ecommerce` e  
+    executar o comando `git remote add origin <caminhoDoRepoDoServidor>`
+    - Feito isso, ao executar o comando `git remote -v`, é mostrado o  
+    caminho do repo do servidor, que é listado como 'origin'
