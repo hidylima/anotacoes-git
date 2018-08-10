@@ -568,9 +568,29 @@ aonde é possivel enviar os arquivos do projeto e centralizá-los
 # `git remote add <origin> <pathToRepositoryToInsertFiles>` - Adicionando um repositório ao projeto 
 - Deve ser executado dentro do diretório do projeto 
   - Por convenção, o repositório do projeto é chamado de 'origin'
+- Linka o repositório do projeto com o repositório `.git` do projeto  
+(my-project.git)
 - No repositório `.git`, ao executar o comando `pwd`, será retornado  
 o caminho do repositório onde os arquivos devem ser inseridos 
-- Linka o repositório do projeto com o repositório `.git`
 
 # `git remote -v`
 - Exibe os repositórios origin fetch e o origin push
+
+# `git push <origin> <branch>` - Sincronizando o ambiente local com um repositório 
+- `push`: empurrar
+- `<branch>`:  nome da branch a ser sincronizada 
+- Empurra para o origin o que está na branch (histórico)
+  - Irá criar, no repositório, uma branch com o mesmo nome da branch  
+  atual do projeto, ou, apenas sincronizar a branch, caso ela já  
+  exista no repositório 
+
+Exemplo: 
+
+- `git push origin master`
+  - Empurra para a branch master do origin (my-project.git), tudo o  
+  que está na branch de trabalho atual
+  - Todas as branches podem ser enviadas para o repositório origin 
+
+# `git clone <repositoryName>` - Clonando um repositório existente 
+- Clonar um repositório é uma das vantagens em manter um repositório  
+onde outras pessoas possam acessá-lo
