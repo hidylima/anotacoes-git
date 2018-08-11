@@ -572,8 +572,8 @@ aonde é possivel enviar os arquivos do projeto e centralizá-los
 (my-project.git)
 - No repositório `.git`, ao executar o comando `pwd`, será retornado  
 o caminho do repositório onde os arquivos devem ser inseridos 
-
 # `git remote -v`
+
 - Exibe os repositórios origin fetch e o origin push
 
 # `git push <origin> <branch>` - Sincronizando o ambiente local com um repositório 
@@ -603,7 +603,7 @@ onde outras pessoas possam acessá-lo
   - Dentro da pasta `ecommerce.git`, posso executar o comando  
   `git init --bare`
   - A partir de agora, `ecommerce.git` será o repositório principal,  
-  onde a coisas do projeto serão compartilhadas 
+  onde as coisas do projeto serão compartilhadas 
   - Posso então sair da pasta deste repositório (`ecommerce.git`) e  
   voltar 2 níveis, para acessar a pasta 'time' e então, acessar a  
   minha pasta 'roger'
@@ -620,3 +620,13 @@ onde outras pessoas possam acessá-lo
     executar o comando `git remote add origin <caminhoDoRepoDoServidor>`
     - Feito isso, ao executar o comando `git remote -v`, é mostrado o  
     caminho do repo do servidor, que é listado como 'origin'
+  - Para clonar este repositório no computador de outros membros do  
+  time, basta dar um `pwd` na pasta `ecommerce.git`, copiar o caminho  
+  e, dentro da pasta da 'ana', por exemplo, executar um  
+  `git clone caminhoDoEcommerce.git` e o repositório será clonado  
+  dentro de um diretório `ecommerce`, dentro da pasta da ana
+    - Feito isso, ao executar o comando `git remote -v`, é mostrado o  
+    caminho do repo do servidor, que é listado como 'origin'
+  - Agora, os dois membros do time, Roger e Ana, podem fazer alterações,  
+  trabalhando no mesmo projeto e fazendo push no repositório principal,  
+  que é o repositório do servidor (`ecommerce.git`)
