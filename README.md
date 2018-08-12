@@ -625,8 +625,26 @@ onde outras pessoas possam acessá-lo
   e, dentro da pasta da 'ana', por exemplo, executar um  
   `git clone caminhoDoEcommerce.git` e o repositório será clonado  
   dentro de um diretório `ecommerce`, dentro da pasta da ana
-    - Feito isso, ao executar o comando `git remote -v`, é mostrado o  
-    caminho do repo do servidor, que é listado como 'origin'
+    - Feito isso, ao executar o comando `git remote -v`, dentro do  
+    diretório `ecommerce` é mostrado o caminho do repo do servidor,  
+    que é listado como 'origin'
   - Agora, os dois membros do time, Roger e Ana, podem fazer alterações,  
   trabalhando no mesmo projeto e fazendo push no repositório principal,  
   que é o repositório do servidor (`ecommerce.git`)
+    - Agora, qualquer alteração feita no repositório 'roger' não  
+    irá refletir, obviamente, no repositório da ana 
+  - Agora, se roger faz uma alteração e dá um push pro repositório  
+  remoto `ecommerce.git` e ana altera um arquivo e faz um push  
+  também, ana visualizará a mensagem dizendo que o push dela foi  
+  rejeitado, pois o repositório local dela não está atualizado 
+    - Não é possível enviar uma alteração para o repo remoto sem  
+    pegar o arquivo atualizado 
+
+# `git pull <origin> <branch>` - Puxando dados de um repositório remoto 
+- Puxar
+- Garante que eu esteja com a última versão atualizada do projeto 
+- Após puxar os arquivos atualizados do repositório remoto, é possível  
+então dar um push com as alterações locais feitas 
+- **Ao trabalhar em equipe, antes de alterar qualquer arquivo e dar um push para o servidor ou repo remoto, sempre executar em meu computador, ou pasta local, o comando `git pull origin master`, para que as alterações sejam baixadas para meu repositório local**
+  - Isso garante que, antes de começar a trabalhar, os arquivos  
+  estarão atualizados 
