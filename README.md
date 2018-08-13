@@ -648,3 +648,39 @@ então dar um push com as alterações locais feitas
 - **Ao trabalhar em equipe, antes de alterar qualquer arquivo e dar um push para o servidor ou repo remoto, sempre executar em meu computador, ou pasta local, o comando `git pull origin master`, para que as alterações sejam baixadas para meu repositório local**
   - Isso garante que, antes de começar a trabalhar, os arquivos  
   estarão atualizados 
+
+# Controle de versão distribuído 
+- Ao contrário de um controle de versão centralizado, o repositório  
+principal não fica bloqueado quando alguém está fazendo alterações  
+em um arquivo 
+- Permite trabalhar de forma descentralizada. Apenas o repo principal  
+será um lugar centralizado 
+- É possível que duas ou mais pessoas editem os mesmos arquivos, pois  
+o git irá trabalhar com o sistema de auto merge dele 
+
+# Nunca faça commits direto na branch master 
+- Usar uma branch por feature 
+
+# Melhorando o histórico de commits 
+
+# `git commit -m "..." --amend`
+- **Usar apenas em commits que não foram pusheados para o repo principal**
+- Usar apenas em casos onde seria ideal que um detalhe que foi  
+utilizado no último commit **sem push** fosse inserido no commit  
+- Em casos onde a última alteração feita no arquivo poderia  
+ser commitada junto com o commit mais recente (exemplo:  
+ajustou o título da página, commitou e depois apenas reindentou  
+um bloco de código), é possível: 
+  - copiar a hash do último commit
+  - dar um git add no arquivo alterado 
+  - executar um git commit e, após a mensagem do commit, utilizar  
+  o parâmetro `--amend`
+    - `git commit -m "Ajusta título a página e indentação" --amend`
+- Ao utilizar este comando, o último commit é sobrescrito
+- Evita sujar o histórico com um commit de algo que não é  
+significativo e não precisava estar ali 
+- Requer muito cuidado caso o push para o repositório principal  
+já tenha sido executado 
+  - Se o amend for utilizado para um commit já existente no repo  
+  principal, haverá um conflito no commit e será gerado um tipo  
+  de problema que terá que ser resolvido manualmente 
