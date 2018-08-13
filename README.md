@@ -755,3 +755,28 @@ em outra parte dele (adiciono a tag footer)
 - Faço o merge da branch master na branch 'dev'
 - **Agora o git conseguiu fazer o automerge**
   - Ou seja, tenho as duas alterações feitas no arquivo
+
+# Configurando a merge tool 
+- O Git, por padrão, possui uma ferramente para automatizar a resolução  
+de conflitos 
+
+# `git config --global merge.tool meld`
+- Ao executar o comando `git config -l`, é exibida a possibilidade de  
+configuração da merge tool: `merge.tool=vim`
+- Para alterar a ferramenta de vim para meld, é necessário executar o  
+comando `git config --global merge.tool meld`
+- Após isso, ao executar um `git config --list`, é exibido que agora  
+a merge tool é o meld: `merge.tool=meld`
+- Após isso, é necessário, no Windows, seguis os passos abaixo: 
+  - After [installing it](http://meldmerge.org/)
+  - I had to tell git where it was:
+  - git config --global merge.tool meld
+  - git config --global diff.tool meld
+  - git config --global mergetool.meld.path "C:\Program Files (x86)\Meld\meld\meld.exe"
+  - And that seems to work. Both merging and diffing with "git difftool"  
+  or "git mergetool"
+- Agora, ao dar conflito de arquivo, basta executar o comando  
+`git mergetool`
+  - Será exibido o arquivo em que o merge está sendo feito e uma  
+  mensagem de aguardo da confirmação para o uso do meld 
+  - Após isso, uma interface será aberta 
