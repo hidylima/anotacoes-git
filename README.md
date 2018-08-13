@@ -686,6 +686,11 @@ já tenha sido executado
   de problema que terá que ser resolvido manualmente  
 
 # Como funciona o automerge do Git 
+- O automerge entre o mesmo arquivo em diferentes branches funciona  
+apenas para linhas de código distantes umas das outras 
+- O problema não é trabalhar no mesmo arquivo em que a outra pessoa está  
+trabalhando, mas sim, em **linhas de código próximas umas das outras** ou  
+na mesma linha 
 - Digamos que meu arquivo `style.css` seja alterado, adicionado  
 com o `git add .` e commitado, na branch 'dev'
 - Feito isso, irei para a branch master. Na branch master, as  
@@ -740,3 +745,13 @@ especificando que o conflito de cor foi resolvido
 está funcionando normalmente 
 - Então, agora é possível acessar a branch master e mergear  
 a branch 'dev' nela, com o `git merge dev`
+
+Outro tipo de problema: 
+- Faço uma alteração no `<title>` de um arquivo html, na branch principal
+- Adiciono e commito a alteração, dou checkout para a branch 'dev'
+- Na branch 'dev', faço uma alteração no mesmo arquivo html,  
+em outra parte dele (adiciono a tag footer)
+- Adiciono e commito a alteração 
+- Faço o merge da branch master na branch 'dev'
+- **Agora o git conseguiu fazer o automerge**
+  - Ou seja, tenho as duas alterações feitas no arquivo
