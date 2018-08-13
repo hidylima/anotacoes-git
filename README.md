@@ -683,4 +683,60 @@ significativo e não precisava estar ali
 já tenha sido executado 
   - Se o amend for utilizado para um commit já existente no repo  
   principal, haverá um conflito no commit e será gerado um tipo  
-  de problema que terá que ser resolvido manualmente 
+  de problema que terá que ser resolvido manualmente  
+
+# Como funciona o automerge do Git 
+- Digamos que meu arquivo `style.css` seja alterado, adicionado  
+com o `git add .` e commitado, na branch 'dev'
+- Feito isso, irei para a branch master. Na branch master, as  
+alterações feitas no arquivo, na branch 'dev', não foram  
+refletidas na branch atual (master)
+- Irei, à partir da branch master, criar e acessar uma nova  
+branch chamada 'altera-cor-texto' e fazer uma outra alteração  
+no mesmo arquivo css 
+- Após alterar, irei dar um `git add .` e um `git commit -m "..."`  
+- Ou seja, agora, o mesmo arquivo css tem uma alteração na branch  
+'dev' (tamanho do texto) e outra alteração na branch  
+'altera-cor-texto' (cor do texto)
+- Na branch 'dev' o texto está com 18px e na branch  
+'altera-cor-texto' o texto ainda com 14px
+- Se, na branch 'dev', for executado um `git merge altera-cor-do-texto`,  
+será exibida uma mensagem de conflito no arquivo `style.css`
+- Se um `git status` for executado após isso, será exibida uma  
+mensagem dizendo que um arquivo foi modificado por duas branches  
+- Ao executar um `git diff`, é mostrado que a branch HEAD (atual)  
+possui linhas de código diferentes em relação à branch  
+'altera-cor-texto' (imagem abaixo)
+
+![diff](https://user-images.githubusercontent.com/29297788/44011809-257ef8e4-9e91-11e8-83be-c2b46d66da8a.jpg)
+
+- Neste caso, como é um código pequeno, é possível acessr o arquivo,  
+deixar apenas o código correto e fazer o commit normalmente 
+
+# Resolvendo problemas de conflito 
+- Primeira solução: **abortar o merge**, com o comando  
+`git merge --abort`, após a exibição do conflito, o git  
+irá tentar abortar o merge feito. 
+  - Após isso, ao executar um `git status`, é exibido que  
+  o working directory está limpo e o arquivo está com as  
+  alterações anteriores 
+- Próxima solução: analisar o código que possui os sinais  
+de '+' (imagem abaixo) em relação ao que possui os sinais  
+de '-' e identificar o que foi alterado 
+
+![diff-2](https://user-images.githubusercontent.com/29297788/44011980-60c6f194-9e92-11e8-8a04-ca70f86f6014.jpg)
+
+- Então, neste caso, como é um código pequeno, basta ir no  
+arquivo css, copiar a alteração de cor da branch  
+'altera-cor-texto', colá-la no código da branch atual,   
+remover o código da branch 'altera-cor-texto' e remover os  
+códigos `<<<<<HEAD` e `>>>>> branchname` que o conflito  
+gerou no arquivo
+- Agora, ao dar um `git diff`, a atualização do código é  
+mostrada
+- Então, posso adicionar e commitar o arquivo, com uma mensagem  
+especificando que o conflito de cor foi resolvido 
+- Agora, ao dar um `git status`, é exibido que a branch já  
+está funcionando normalmente 
+- Então, agora é possível acessar a branch master e mergear  
+a branch 'dev' nela, com o `git merge dev`
