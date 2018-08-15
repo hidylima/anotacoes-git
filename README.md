@@ -757,7 +757,7 @@ em outra parte dele (adiciono a tag footer)
   - Ou seja, tenho as duas alterações feitas no arquivo
 
 # Configurando a merge tool 
-- O Git, por padrão, possui uma ferramente para automatizar a resolução  
+- O Git, por padrão, possui uma ferramenta para automatizar a resolução  
 de conflitos 
 
 # `git config --global merge.tool meld`
@@ -780,3 +780,24 @@ a merge tool é o meld: `merge.tool=meld`
   - Será exibido o arquivo em que o merge está sendo feito e uma  
   mensagem de aguardo da confirmação para o uso do meld 
   - Após isso, uma interface será aberta 
+    - Janela 1: 
+      - Alterações feitas no meu repo local
+    - Janela 2: 
+      - Como o arquivo irá ficar 
+    - Janela 3: 
+      - O arquivo remoto (a outra branch que foi mergeada)
+    - Para selecionar quais alterações devem permanecer, basta clicar  
+    nas setas das janela 1 ou 2
+    - Ao terminar, é só salvar e fechar 
+    - É importante perceber que ele cria alguns arquivos temporários,  
+    que ficam no meu repo local do projeto 
+    - Ao dar um `git status`, são exibidas as modificações do arquivo 
+    - Para ignorar os arquivos que o meld criou, como eles ainda não  
+    estão adicionados na staging area, basta adicioná-los no `.gitignore`
+      - `echo "*.orig" >> .gitignore` inclui, no .gitignore, todos os  
+      arquivos `.orig` gerados pelo meld 
+
+# `git checkout <archName>` - Possibilita a volta de alterações em um arquivo 
+- Ao alterar um arquivo, se ele não tiver sido adicionado à staging area  
+com o `git add`, basta executar este comando e as  
+**alterações feitas no commit anterior estarão de volta** 
