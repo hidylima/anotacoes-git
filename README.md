@@ -797,7 +797,32 @@ a merge tool é o meld: `merge.tool=meld`
       - `echo "*.orig" >> .gitignore` inclui, no .gitignore, todos os  
       arquivos `.orig` gerados pelo meld 
 
-# `git checkout <archName>` - Possibilita a volta de alterações em um arquivo 
+# `git checkout <file>` - Voltando alterações não commitadas
 - Ao alterar um arquivo, se ele não tiver sido adicionado à staging area  
 com o `git add`, basta executar este comando e as  
 **alterações feitas no commit anterior estarão de volta** 
+
+# `git diff -w` Visualizando alterações ignorando espaços em branco 
+- Na branch master, faço uma alteração no title do index.html e  
+dou um tab à mais nas tags internas do body 
+- Ao executar um git diff, são exibidas as alterações do título e  
+dos espaços adicionados 
+  - Só que **alterações de espaçamento, geralmente, não são importantes**,  
+  para a visualização  
+- Este comando mostra o que foi alterado no arquivo, ignorando  
+qualquer alteração que tenha apenas espaçamento adicionado 
+
+# `git checkout <commit>` - Voltando no tempo 
+- Ao executar um `git log --oneline`, são mostrados todos os commits  
+da branch
+- Se eu quiser voltar em algum deles, basta executar o `git checkout <commit>`,  
+passando por parâmetro o número do commit 
+- Ao voltar, se o `git log --oneline` for executado, apenas os commits  
+feitos até aquele ponto serão visualizados 
+- **Os commits anteriores não foram perdidos**
+  - Ao dar um `git checkout master`, o projeto volta para a  
+  posição onde ele estava (presente)
+- É possível fazer alterações em um commit passado e manter essas  
+alterações. Basta criar uma nova branch 
+  - É como se essa nova branch fosse baseada à partir desse commit  
+  do passado
