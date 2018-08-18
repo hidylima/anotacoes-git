@@ -511,7 +511,7 @@ e a branch não será criada
 - Renomeia uma branch 
 - É necessário estar dentro da branch a ser renomeada 
 
-# `git branch -D <branchName> <branchName2> <branchName3>`
+# `git branch -D <branchName> <branchName2> <branchName3>` - Removendo / deletando branches 
 - Remove uma ou múltiplas branches 
 - Útil em casos onde é necessário apagar branches de features que  
 já foram mergeadas na branch principal (dev)
@@ -826,3 +826,25 @@ feitos até aquele ponto serão visualizados
 alterações. Basta criar uma nova branch 
   - É como se essa nova branch fosse baseada à partir desse commit  
   do passado
+    - `git checkout -b voltando-no-tempo`
+  - Depois de criar essa nova branch, é possível fazer as alterações  
+  necessárias nela e depois mergear essa branch com a master: 
+    - `git checkout master`
+    - `git merge voltando-no-tempo`
+  - Assim, é possível pegar alterações feitas naquele arquivo e jogá-las  
+  para a master 
+  - Ou fazer coisas que ficaram para trás, foram apagadas mas é necessário  
+  voltar nessas implementações 
+  - Esse é um dos exemplos de como mensagens legíveis de commit podem ser  
+  cruciais para o projeto 
+  - E importante também que cada commit possua apenas uma implementação 
+
+# `git checkout <branch> -b <new_branch>` - Mudando de branch e já criando uma nova 
+- Apenas o `git checkout <branch>` irá mudar de branch 
+- Este comando dá um checkout para a branch `<branch>` e já cria  
+outra branch baseada nela 
+- `<branch>` é a branch em que a nova branch criada será baseada 
+- É interessante também em casos onde é necessário voltar no log 
+  - Ao invés de passar apenas `git checkout <hash>`, é possível  
+  concatenar o `-b <new_branch>`
+  - Ou seja, já vai criar uma branch baseada em um commit do passado 
