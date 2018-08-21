@@ -880,3 +880,17 @@ este comando
 ## `git stash drop stash@{<stashNumber>}` - Remover / deletar um stash da lista
 
 ## `git stash pop` - Aplicar e já remover o último stash 
+
+# `git log --pretty=format:"%h - %an, %ar : %s"` - Logs personalizados
+- Ideal para alias no bash 
+- Exibe o log com o seguinte formato: 
+  - hash abreviada do commit (`%h`)
+  - Espaços e traço (` - `)
+  - Nome do autor do commit (`%an` - author name)
+  - Há quanto tempo foi feito o commit (`%ar`)
+  - Título do commit (`%s`)
+
+- Tabela de possíveis logs personalizados:  
+
+![tabela-logs](https://user-images.githubusercontent.com/29297788/44376289-2ffb0b80-a4ce-11e8-82b4-d84066014834.png)
+![tabela-logs-02](https://user-images.githubusercontent.com/29297788/44376338-6fc1f300-a4ce-11e8-8f7a-19c02b094685.png)
