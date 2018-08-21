@@ -1,7 +1,8 @@
-# [cygwin](http://www.cygwin.com/)
+# [cygwin](http://www.cygwin.com/) 
 - Terminal que utiliza, no Windows, comandos básicos do Linux, bash  
 do Unix 
 - [Básico sobre o cygwin](https://youtu.be/TFCCriN_MvU?t=11m40s)
+- Cmder também aceita comandos Unix
 
 # Comandos terminal Linux 
 - `pwd` print working directory 
@@ -239,6 +240,7 @@ especificado
 ## `git diff --staged`
 - Mostra as alterações entre os arquivos de staging area e git  
 directory
+- Comumente usado após o git add 
 
 ## `git diff <hashCommit1 hashCommit2>`
 - Exibe as alterações feitas entre commits
@@ -848,3 +850,33 @@ outra branch baseada nela
   - Ao invés de passar apenas `git checkout <hash>`, é possível  
   concatenar o `-b <new_branch>`
   - Ou seja, já vai criar uma branch baseada em um commit do passado 
+
+# `git stash` - Deixando o trabalho menos urgente para depois 
+- Mantém alterações não comitadas em uma lista para que estas  
+alterações sejam acessadas novamente depois 
+- Salva o working directory em um estado 
+- Ao executar um git status, é exibido que o working directory  
+está limpo 
+  - As alterações não comitadas desaparecem dos arquivos,  
+  **mas não foram perdidas**
+- Ideal para features que estão em desenvolvimento, não devem ser  
+commitadas, mas é necessário salvar as alterações feitas para  
+mudar para uma outra entrega mais urgente 
+- **Não deixar muitos stashes**
+
+## `git stash list` - Visualizar uma lista de stashes 
+- Exibe um work in progress com a branch da feature que estava  
+sendo desenvolvida no momento em que o `git stash` foi executado 
+- O stash 0 é sempre o mais recente 
+- Se neste momento uma alteração for feita 
+
+## `git stash apply` - Voltar para o último stash 
+- Volta as alterações feitas até o momento do `git stash`
+- Após terminar o job mais urgente, voltar para a branch da  
+feature menos urgente, que estava sendo desenvolvida, e executar  
+este comando 
+- Aplica sempre o stash mais recente 
+
+## `git stash drop stash@{<stashNumber>}` - Remover / deletar um stash da lista
+
+## `git stash pop` - Aplicar e já remover o último stash 
