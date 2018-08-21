@@ -894,3 +894,10 @@ este comando
 
 ![tabela-logs](https://user-images.githubusercontent.com/29297788/44376289-2ffb0b80-a4ce-11e8-82b4-d84066014834.png)
 ![tabela-logs-02](https://user-images.githubusercontent.com/29297788/44376338-6fc1f300-a4ce-11e8-8f7a-19c02b094685.png)
+
+# Conhecendo o [GitHub](https://github.com/)
+- O papel do GitHub é substituir o repositório local do projeto (que  
+pode estar um servidor, por exemplo)
+
+# Criando um repo no GitHub
+- A maneira ideal é criar um novo repositório dentro do GitHub 
