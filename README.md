@@ -593,7 +593,7 @@ Exemplo:
   que está na branch de trabalho atual
   - Todas as branches podem ser enviadas para o repositório origin 
 
-# `git clone <repositoryName>` - [Clonando](#git-clone) um repositório existente
+# `git clone <repositoryName>` - Clonando um repositório existente
 - Clonar um repositório é uma das vantagens em manter um repositório  
 onde outras pessoas possam acessá-lo
 - Exemplo: 
@@ -912,7 +912,7 @@ pode estar um servidor, por exemplo)
 
 # `git remote set-url <origin> <url>` - Alterando a url de `origin`
 - Requisitos: 
-  - [Clonando](#git-clone)
+  - [Esses passos](https://github.com/Roger-Melo/anotacoes-git#git-clone-repositoryname---clonando-um-reposit%C3%B3rio-existente)
 - Estrutura: 
   - `git remote set-url origin https://github.com/Roger-Melo/anotacoes-git`
   - Verificar se foi modificado, com o `git remote -v`
