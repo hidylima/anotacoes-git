@@ -912,7 +912,46 @@ pode estar um servidor, por exemplo)
 
 # `git remote set-url <origin> <url>` - Alterando a url de `origin`
 - Requisitos: 
-  - [Esses passos](https://github.com/Roger-Melo/anotacoes-git#git-clone-repositoryname---clonando-um-reposit%C3%B3rio-existente)
+  - [Desses passos em diante](https://github.com/Roger-Melo/anotacoes-git#git-clone-repositoryname---clonando-um-reposit%C3%B3rio-existente)
 - Estrutura: 
   - `git remote set-url origin https://github.com/Roger-Melo/anotacoes-git`
   - Verificar se foi modificado, com o `git remote -v`
+
+# Commits no github 
+- O link `commits`, com o ícone do relógio, é praticamente um git log de  
+forma visual
+- Ao clicar no nome do commit, são mostradas as alterações feitas nos  
+arquivos 
+- O sinal de `+` no hover das linhas possibilita adicionar comentários [1]
+  - Ao comentar, o comentário fica marcado no repositório para que possa  
+  ser compartilhado com outras pessoas [2]
+  - É marcado quem fez, a hora do comentário e o comentário [3]
+  - Ao clicar no 'just now' do comentário, é possível copiar a url e  
+  compartilhar o comentário com outras pessoas [4]
+- O botão browse files exibe a lista de arquivos alterados, naquele commit  
+específico [5]
+  - O botão com o ícone `<>` faz a mesma ação 
+
+[1]
+
+![mais](https://user-images.githubusercontent.com/29297788/44501603-505cce80-a664-11e8-84df-6eba0bc93d5d.jpg)
+
+[2]
+
+![c1](https://user-images.githubusercontent.com/29297788/44501680-a598e000-a664-11e8-85a2-db12f8cbb691.png)
+
+[3]
+
+![c2](https://user-images.githubusercontent.com/29297788/44501733-d2e58e00-a664-11e8-9f98-a6a0c809f92b.png)
+
+[4]
+
+![c3](https://user-images.githubusercontent.com/29297788/44501801-28ba3600-a665-11e8-9c32-2209dc4c3c80.png)
+
+[5]
+
+![bf](https://user-images.githubusercontent.com/29297788/44501938-a3835100-a665-11e8-87ab-58b7628e8972.png)
+
+[6]
+
+![bf2](https://user-images.githubusercontent.com/29297788/44502004-ed6c3700-a665-11e8-9fc6-d86eda35521e.png)
