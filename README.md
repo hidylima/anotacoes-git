@@ -593,7 +593,7 @@ Exemplo:
   que está na branch de trabalho atual
   - Todas as branches podem ser enviadas para o repositório origin 
 
-# `git clone <repositoryName>` - Clonando um repositório existente 
+# [`git clone <repositoryName>` - Clonando um repositório existente](#git-clone)
 - Clonar um repositório é uma das vantagens em manter um repositório  
 onde outras pessoas possam acessá-lo
 - Exemplo: 
@@ -900,4 +900,19 @@ este comando
 pode estar um servidor, por exemplo)
 
 # Criando um repo no GitHub
-- A maneira ideal é criar um novo repositório dentro do GitHub 
+- A maneira ideal é iniciar um novo repositório dentro do GitHub 
+
+# Subindo arquivos para um repo do github 
+- Copiar a url do repo no github 
+- Acessar diretório do projeto local, dentro da pasta do usuário 
+- Dar um `git remote -v` e conferir se o origin já está configurado 
+- O origin será alterado para apontar para o github 
+  - Para que quando o push for feito, ao invés de enviar para o repo  
+  local, os arquivos sejam enviados para o github 
+
+# `git remote set-url <origin> <url>` - Alterando a url de `origin`
+- Requisitos: 
+  - [Estes passos](#git-clone)
+- Estrutura: 
+  - `git remote set-url origin https://github.com/Roger-Melo/anotacoes-git`
+  - Verificar se foi modificado, com o `git remote -v`
