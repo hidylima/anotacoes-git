@@ -1007,3 +1007,29 @@ com o HTTPS
 [1]
 
 ![image](https://user-images.githubusercontent.com/29297788/44561031-f540df80-a728-11e8-908e-3a195b9f25d5.png)
+
+# Criando novas branches no GitHub
+- Para enviar uma branch para o repo no Github, basta dar um push nela,  
+da mesma forma feita com a branch master
+  - `git push origin <branchName>`
+- Na págia do repo, ao acessar o link branches e dar um hover nos números  
+da branch [1], é mostrado quantos commits dessa branch estão à frente ou  
+atrás da branch master 
+
+[1]
+
+![image](https://user-images.githubusercontent.com/29297788/44561401-0985dc00-a72b-11e8-9533-deace34220b6.png)
+
+# Visualizando as diferenças/alterações entre duas branches 
+- Clicar no botão 'New pull request' [1]
+- Selecionar branches a serem comparadas [2]
+
+[1]
+
+![image](https://user-images.githubusercontent.com/29297788/44561624-02130280-a72c-11e8-9600-7a22a8b9543d.png)
+
+
+[2]
+
+![image](https://user-images.githubusercontent.com/29297788/44561669-3d153600-a72c-11e8-83d9-87c028dd8091.png)
+
