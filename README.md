@@ -973,9 +973,37 @@ específico [5]
 - Documenta problemas encontrados no repo 
 - É possível marcar usuários, mencionando o `@` deles. A pessoa receberá  
 a notificação da marcação via e-mail ou notificações do github 
+- Podem ser vistas como uma to-do list 
 
 ### Assign issues
 - Possiilita a atribuiçãod e issues específicas para cada pessoa 
 
 ![image](https://user-images.githubusercontent.com/29297788/44560709-6b444700-a727-11e8-8127-dc494a2b5790.png)
 ![image](https://user-images.githubusercontent.com/29297788/44560694-5667b380-a727-11e8-9c97-f3f518796df7.png)
+
+
+## Linguagens do projeto 
+- Ao clicar na barra colorida abaixo do nome do projeto, é possível  
+visualizar quais e quanto de cada linguagem foi utilizada no projeto 
+- Ao clicar no nome da linguagem, é possível visualizar uma lista com  
+todos os arquivos do projeto que utilizam essa linguagem 
+
+![image](https://user-images.githubusercontent.com/29297788/44560829-f6254180-a727-11e8-9260-76761841b8d5.png)
+![image](https://user-images.githubusercontent.com/29297788/44560831-fa515f00-a727-11e8-991a-27a984197400.png)
+
+## SSH
+- Requer uma chave SSH no computador, para que esse formato possa  
+funcionar 
+- Em casos de não tiver chave SSH ou não quiser criar, clonar repos  
+com o HTTPS 
+
+# Fechando issues através de commits 
+- Basta inserir `fix #<issueId>` junto da mensagem do commit 
+  - Exemplo `git commit -m "change language to pt-br - fix #3`
+- Ao dar um push nesse commit, automaticamente a issue será fechada 
+- Cada issue possui um ID [1]
+  - Que é mostrada também no fim da url do browser, da página da issue 
+
+[1]
+
+![image](https://user-images.githubusercontent.com/29297788/44561031-f540df80-a728-11e8-908e-3a195b9f25d5.png)
