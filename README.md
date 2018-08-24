@@ -955,3 +955,27 @@ específico [5]
 [6]
 
 ![bf2](https://user-images.githubusercontent.com/29297788/44502004-ed6c3700-a665-11e8-9fc6-d86eda35521e.png)
+
+# Conhecendo a página do repositório 
+
+## Star
+- É como se fosse um like / favorito 
+- Gera uma lista de favoritos 
+
+## Fork
+- Faz uma cópia do repositório em questão para a minha conta do GitHub 
+- Ideal para casos em que irei colaborar com projetos de outras pessoas 
+
+## Releases 
+- Documenta as versões do projeto 
+
+## Issues 
+- Documenta problemas encontrados no repo 
+- É possível marcar usuários, mencionando o `@` deles. A pessoa receberá  
+a notificação da marcação via e-mail ou notificações do github 
+
+### Assign issues
+- Possiilita a atribuiçãod e issues específicas para cada pessoa 
+
+![image](https://user-images.githubusercontent.com/29297788/44560709-6b444700-a727-11e8-8127-dc494a2b5790.png)
+![image](https://user-images.githubusercontent.com/29297788/44560694-5667b380-a727-11e8-9c97-f3f518796df7.png)
