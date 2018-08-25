@@ -1067,3 +1067,13 @@ com os comandos:
   - ou `git push origin :<branch>`
 - A diferença é que ao deletar branches do github pela linha de comando,  
 não há como restaurá-las 
+
+# Senha ao dar push 
+- Há uma configuração que pode ser feita para evitar a necessidade de digitar  
+a senha em todos os repos ao dar push
+- Funciona com os repos que estão sendo utilizados com https 
+- Para salvar a senha, basta digitar o comando: 
+  - `git config --global credential.helper cache`
+  - Agora, na próxima vez em qua a senha for digitada, ela será cacheada 
+  - O Git irá criptografar e guardar a senha no computador local 
+  - Vale apenas para a máquina atual 
