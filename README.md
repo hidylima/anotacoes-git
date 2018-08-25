@@ -998,8 +998,8 @@ funcionar
 com o HTTPS 
 
 # Fechando issues através de commits 
-- Basta inserir `fix #<issueId>` junto da mensagem do commit 
-  - Exemplo `git commit -m "change language to pt-br - fix #3`
+- Basta inserir `close #<issueId>` junto da mensagem do commit 
+  - Exemplo `git commit -m "change language to pt-br - close #3`
 - Ao dar um push nesse commit, automaticamente a issue será fechada 
 - Cada issue possui um ID [1]
   - Que é mostrada também no fim da url do browser, da página da issue 
@@ -1033,3 +1033,21 @@ atrás da branch master
 
 ![image](https://user-images.githubusercontent.com/29297788/44561669-3d153600-a72c-11e8-83d9-87c028dd8091.png)
 
+# Pull Request no GitHub 
+É uma solicitação de merge. 
+
+Ao criar um pull request, as alterações feitas na branch 'compare' serão  
+mergeadas na branch 'base' 
+
+![image](https://user-images.githubusercontent.com/29297788/44614543-7f5a7800-a7fd-11e8-93b1-9391d79ab443.png)
+
+Após criar um pull request, para saber o que foi alterado, basta  
+clicar no link de commits. Será exibido um log de commits com as  
+diferenças entre as branches que estão sendo comparadas.
+
+![image](https://user-images.githubusercontent.com/29297788/44614605-335c0300-a7fe-11e8-9e89-bc8cb8d8799d.png)
+
+# Puxando as alterações do repo do github para o repo local 
+- Mudar a branch local para master 
+- `git pull origin master`
+  - Puxa as alterações da branch master do repositório origin 
