@@ -1068,12 +1068,28 @@ com os comandos:
 - A diferença é que ao deletar branches do github pela linha de comando,  
 não há como restaurá-las 
 
-# Senha ao dar push 
+# `git config --global credential.helper cache` - Evitar digitar senha ao dar push 
 - Há uma configuração que pode ser feita para evitar a necessidade de digitar  
 a senha em todos os repos ao dar push
-- Funciona com os repos que estão sendo utilizados com https 
+- Funciona com os repos que estão sendo utilizados com **https** 
 - Para salvar a senha, basta digitar o comando: 
   - `git config --global credential.helper cache`
   - Agora, na próxima vez em qua a senha for digitada, ela será cacheada 
   - O Git irá criptografar e guardar a senha no computador local 
   - Vale apenas para a máquina atual 
+
+# Voltar a digitar senha ao dar push 
+- Útil para usar o git em um computador não seguro 
+- `git config --global **--unset** credential.helper`
+  - O parâmetro `--unset` remove a propriedade que foi configurada pelo usuário 
+    - Útil em casos onde a propriedade deve ser removida ou no momento  
+    da configuração foi digitada de forma errada e deve ser removida 
+    - Funciona para qualquer propriedade ou configuração listada em: 
+      - `git config --global --list`
+
+# Especificar tempo para a senha expirar 
+- Útil em casos onde se está trabaçhando em um pc temporário 
+  - Sintaxe:
+  - `git config --global credential.helper 'cache --timeout=3600'`
+    - O formato de valor é em segundos (3600 = uma hora)
+    - A senha não será solicitada na próxima uma hora
