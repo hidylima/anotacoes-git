@@ -1093,3 +1093,14 @@ a senha em todos os repos ao dar push
   - `git config --global credential.helper 'cache --timeout=3600'`
     - O formato de valor é em segundos (3600 = uma hora)
     - A senha não será solicitada na próxima uma hora
+
+# Contribuidores de um repo no GitHub 
+- São apenas as pessoas que fizeram **commits** para o repo 
+
+![image](https://user-images.githubusercontent.com/29297788/44614921-77ea9d00-a804-11e8-825e-e0ad3bdd0544.png)
+
+# GitHub Pulse
+- Dá algumas informações sobre o repo 
+
+![image](https://user-images.githubusercontent.com/29297788/44614937-f2b3b800-a804-11e8-847e-70c54dbfca72.png)
+
