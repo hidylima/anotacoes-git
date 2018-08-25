@@ -1051,3 +1051,19 @@ diferenças entre as branches que estão sendo comparadas.
 - Mudar a branch local para master 
 - `git pull origin master`
   - Puxa as alterações da branch master do repositório origin 
+
+# Deletando branches no GitHub 
+A vantagem de fazer isso pelo GitHub é que, se uma branch for deletada  
+acidentalmente, é possível restaurá-la 
+
+![image](https://user-images.githubusercontent.com/29297788/44614673-84202b80-a7ff-11e8-9518-d9121c2f2911.png)
+
+Útil em casos onde todas as branches já mergeadas devem ser deletadas 
+
+## `git push origin <branch> --delete` - Deletando branches do GitHub na linha de comando 
+- É possível deletar a branch no GitHub através da linha de comando,  
+com os comandos: 
+  - `git push origin <branch> --delete` 
+  - ou `git push origin :<branch>`
+- A diferença é que ao deletar branches do github pela linha de comando,  
+não há como restaurá-las 
