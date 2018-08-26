@@ -1104,3 +1104,29 @@ a senha em todos os repos ao dar push
 
 ![image](https://user-images.githubusercontent.com/29297788/44614937-f2b3b800-a804-11e8-847e-70c54dbfca72.png)
 
+# Configurações do repo no GitHub
+- Ao renomear um repo, ao acessá-lo com a url antiga, pelo browser, é  
+feito um redirect automático para a página do repo já com o novo nome 
+
+# GitHub pages
+- Cria um gerenciador de páginas com o repo do GitHub
+- Não executa arquivos dinâmicos, como sites em PHP, Java, .Net, etc
+
+# O que é uma ferramente de CI
+- Ferramenta de integração contínua 
+- Mantém o código sempre funcional 
+- Possibilita uma configuração que rode testes, por exemplo, antes de  
+fazer um merge para a branch principal 
+
+# Webhooks
+- Servem para permitir que, em um momento específico, o CI acesse o  
+GitHub em questão 
+  - Exemplos: 
+    - Ativar o CI quando o pull request for feito diretamente no repo 
+    - Ativar o CI quando alguém tentar dar um merge de uma outra branch  
+    para a master 
+
+# Deploy Keys
+- Chaves SSH
+- Permitem que o deploy seja feito diretamente para o repo, adicionando  
+computadores específicos 
