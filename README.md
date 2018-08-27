@@ -965,6 +965,8 @@ específico [5]
 ## Fork
 - Faz uma cópia do repositório em questão para a minha conta do GitHub 
 - Ideal para casos em que irei colaborar com projetos de outras pessoas 
+  - Submete as alterações feitas no repositório forcado para o dono do  
+  repo principal 
 
 ## Releases 
 - Documenta as versões do projeto 
@@ -994,7 +996,7 @@ todos os arquivos do projeto que utilizam essa linguagem
 ## SSH
 - Requer uma chave SSH no computador, para que esse formato possa  
 funcionar 
-- Em casos de não tiver chave SSH ou não quiser criar, clonar repos  
+- Em casos de não possuir chave SSH ou não quiser criar, clonar repos  
 com o HTTPS 
 
 # Fechando issues através de commits 
@@ -1130,3 +1132,21 @@ GitHub em questão
 - Chaves SSH
 - Permitem que o deploy seja feito diretamente para o repo, adicionando  
 computadores específicos 
+
+# SSH keys
+- Link acessado em 'settings'
+- É o local onde é possível subir as chaves SSH para que o acesso ao repo  
+seja liberado, sem a necessidade de digitar user name / senha 
+- Com a chave SSH, é fornecida uma segurança à mais, pois, permite criar  
+uma chave SSH e com ela, 
+- O SO possui duas chaves: 
+  - Pública: é a chave que é adicionada no GitHub
+  - Privada: é a chave que fica no computador local 
+- Ao tentar fazer uma conexão com uma ferramenta que está utilizando SSH,  
+para fazer a validação de login, essa ferramenta irá pegar a chave pública,  
+baixar para o pc local, fazer a comparação com a chave privada e, se as  
+duas chaves baterem (não são iguais, mas possuem um código que fazem elas  
+baterem), o site concede a autorização de acesso
+- É possível adicionar várias chaves SSH em vários computadores
+  - Todos os pcs que tiverem a chave SSH privada, que bater com a chave  
+  pública, vão ter acesso aos repos do github
