@@ -1155,6 +1155,7 @@ baterem), o site concede a autorização de acesso
 - É uma forma mais legível de se escrever HTML. 
 - Converte o texto para HTML
 - Pode ser usado em issues e pull requests no GitHub 
+- Também aceita HTML 
 
 ## Quebras de linha entre parágrafos - Markdown
 - Basta quebrar a linha 2x, com o `enter`
@@ -1162,4 +1163,43 @@ baterem), o site concede a autorização de acesso
   - 2 espaços também inserem um `<br>`
   - As duas maneiras dependem do editor de texto 
 
-## Quebras de linha entre parágrafos - Markdown
+## Maneira alternativa de criar um link - Markdown
+- `<https://github.com/Roger-Melo>`
+- `<mailto:rogerw592@gmail.com>`
+
+## Escapando caracteres especiais - Markdown
+- Basta utilizar a `\`
+  `\_link_\`
+
+## Citação / Blockquote - Markdown
+- `> Citação aqui`
+  - Para fazer parágrafos, basta inserir o `>` nas próximas linhas,  
+  dependendo do editor de texto
+- Útil para citar o que uma pessoa falou em uma issue, por exemplo 
+
+## Imagens - Markdown
+- `![Alt da imagem](URL "Title da imagem")`
+
+## Tabelas - Markdown
+- Os dados necessários são thead e td
+- Os `:` indicam o alinhamento do texto 
+
+Este é um TD | Exemplo de tabela
+:-----------:|------------------:
+Um td        | Outro td
+Um td        | Outro td
+
+![table](https://user-images.githubusercontent.com/29297788/44698578-df982680-aa56-11e8-88a8-72b72f21f7f3.png)
+
+
+## Task lists - Markdown
+Úteis em issues onde há vários pontos específicos de um só tópico  
+e não é necessário quebrar em várias issues 
+
+- [ ] Tarefa um
+- [x] ~~Tarefa dois~~
+
+![tasklist](https://user-images.githubusercontent.com/29297788/44698860-06a32800-aa58-11e8-92cd-9235054bf686.png)
+
+## Linhas - Markdown
+- `---`, entre quebras de linha 
