@@ -1150,3 +1150,16 @@ baterem), o site concede a autorização de acesso
 - É possível adicionar várias chaves SSH em vários computadores
   - Todos os pcs que tiverem a chave SSH privada, que bater com a chave  
   pública, vão ter acesso aos repos do github
+
+# Markdown
+- É uma forma mais legível de se escrever HTML. 
+- Converte o texto para HTML
+- Pode ser usado em issues e pull requests no GitHub 
+
+## Quebras de linha entre parágrafos - Markdown
+- Basta quebrar a linha 2x, com o `enter`
+- Se a linha for quebrada uma vez, um `<br>` é inserido 
+  - 2 espaços também inserem um `<br>`
+  - As duas maneiras dependem do editor de texto 
+
+## Quebras de linha entre parágrafos - Markdown
