@@ -23,6 +23,7 @@ do Unix
 - `touch nomeArquivo.extensao` cria um arquivo
 - `rm` deleta um arquivo do diretório atual 
 - `rm -r` deleta um diretório 
+- `rm -rf` deleta um diretório 
 - `cat` mostra, no terminal, o conteúdo de um arquivo 
 - `echo` imprime uma string dentro de um arquivo 
   - `echo "uma string" >> nomeArquivo.extensao`
@@ -1219,3 +1220,20 @@ do meu gist
 em uma página HTML
   - Assim é possível escrever um artigo e inserir trechos de código,  
   através dos gists 
+
+# Trabalhando em equipe no GitHub 
+
+## Visualizando toda a configuração **local** atual do git 
+- `git config --list`
+
+## Visualizando toda a configuração **global** atual do git 
+- `git config --global --list`
+
+## Configurando um usuário global para todos os projetos 
+- `git config --global user.name`
+- `git config --global user.email`
+
+## Forkando o repo 
+- Se não há a permissão de commitar diretamente no repo principal,  
+é necessário fazer um fork 
+  - Quando o projeto é open source, geralmente isso é feito comumente 
