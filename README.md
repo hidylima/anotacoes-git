@@ -1237,3 +1237,27 @@ em uma página HTML
 - Se não há a permissão de commitar diretamente no repo principal,  
 é necessário fazer um fork 
   - Quando o projeto é open source, geralmente isso é feito comumente 
+
+## Configurando para que o repo origin seja o repo do GitHub, e não mais o do servidor local 
+- Verificar se o origin está apontando para o diretório do servidor 
+  - `git remote -v`
+- Copiar o link HTTPS do repo forkado, no github
+- Setar uma nova url 
+  - `git remote set-url origin <linkHttps>`
+- Verificar se a substituição ocorreu, ou seja, se o origin fetch e  
+push estão apontando para o repo forkado do github 
+  - `git remote -v`
+
+## Mantendo o repo principal e o forkado atualizados 
+- É necessário adicionar o repo principal (que possui outro dono)  
+como um segundo repo para mim (usuário Roger), pois eu irei ter o  
+origin, que é o meu repo principal (forkado), e irei ter esse  
+segundo repo, que irá se chamar upstream
+  - `git remote add upstream <httpsRepoPrincipal>` 
+  - `git remote -v` para verificar se o repo origin é o forkado  
+  e o upstream é o repo principal (que possui outro dono)
+  - Dessa forma, se eu tiver permissão, posso enviar alterações  
+  diretamente para o upstream do outro dono. Se eu não tiver  
+  permissão, posso enviar as alterações para o meu repo forkado  
+  do github (origin) e depois enviar pull request para o repo  
+  upstream 
