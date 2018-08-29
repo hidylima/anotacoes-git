@@ -1203,3 +1203,19 @@ e não é necessário quebrar em várias issues
 
 ## Linhas - Markdown
 - `---`, entre quebras de linha 
+
+# Gists - pequenos trechos de código 
+- Espaço para a criação de pequenos trechos de código em qualquer linguagem,  
+para compartilhar, ou não, com outras pessoas 
+- Gistis públicos ficam liberados para qualquer pessoa visualizar, na home  
+do meu gist 
+- Gists secretos são acessíveis apenas para quem tem a url 
+- Funciona basicamente como um repo separado 
+- Arquivos com prefixos numéricos ficam no topo da listagem de gists 
+  - O GitHub organiza os Gists em ordem alfabética
+- Sempre colocar um README.md para o Gist 
+- Ideal para códigos pequenos, em que não é necessário fazer um repo 
+- É possível embedar um gist, ou seja, é possível inserir os trechos de código  
+em uma página HTML
+  - Assim é possível escrever um artigo e inserir trechos de código,  
+  através dos gists 
