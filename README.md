@@ -1277,6 +1277,19 @@ na minha branch principal:
 - Executar um `ls - la`  para visualizar os novos arquivos e  
 pastas
 
+## Mostrando uma linha específica para outra pessoa 
+- Acessar a página do arquivo 
+- Clicar no número da linha
+  - Fazendo isso, a linha ficará e a url da página muda [1]
+  - É possível segurar o shift e clicar em mais de uma linha
+- Agora é só compartilhar a url 
+
+[1]
+
+![image](https://user-images.githubusercontent.com/29297788/44870210-f5c80180-ac65-11e8-954c-a51d4775db6e.png)
+
+
+
 ## Tipos de workflow
 - Um tipo de workflow é criar uma branch apenas para desenvolvimento  
 ('dev')
@@ -1313,3 +1326,70 @@ principal (upstream) no Github
 - No terminal, voltar para a branch dev
 - Ao invés de fazer um merge da branch da feature que acabei de codar com  
 a branch dev, executar um `git fetch upstream` e um `git merge upstream/dev`
+- Nunca mergear commits na dev em que a feature não esteja pronta
+- Sempre commitar um arquivo criado 
+- Ao trabalhar e alterar um arquivo js, por exemplo, antes de dar um push  
+para o repo, executar um `git fetch upstream` e verificar se há alguma nova  
+alteração na branch dev. 
+- Nunca utilizar uma branch já utilizada anteriormente 
+  - Se o time utilizar um sistema como o trello, por exemplo, cada task criada  
+  nessa ferramenta possui um nome ou código de referência. Talvez seja  
+  interessante utilizar esse código de referência como nome da minha branch  
+  para criar uma nova feature 
+- No repo que forkei, como não devo enviar o pull request para o meu repo,  
+e sim para o upstream, clicar no botão de compare pull request e setar o  
+repo base e a branch a fazer o pull:
+
+![image](https://user-images.githubusercontent.com/29297788/44867801-412ae180-ac5f-11e8-8421-8e5f77eb5332.png)
+
+- O botão 'Compare across forks' permite selecionar tanto o repo como  
+a branch para poder enviar o pull request
+- Sempre ao fazer um pull, solicitar um code review: 
+
+![image](https://user-images.githubusercontent.com/29297788/44868077-17be8580-ac60-11e8-9912-c03aac6dc13d.png)
+
+- Verificar se tenho acesso para fazer um merge desse pull request, após  
+a autorização do dono do repo upstream 
+- Sempre que eu enviar um pull request para qualquer projeto, as únicas  
+alterações e commits que devem aparecer são as minhas [1]
+  - Se alterações de outra pessoa também estiverem aparecendo, pode ser  
+  que essa outra pessoa ainda não fez o merge, e isso pode causar conflito  
+  no futuro
+
+[1]
+
+![image](https://user-images.githubusercontent.com/29297788/44868563-90721180-ac61-11e8-9df2-40be9fbd52f7.png)
+
+# Colaborando em projetos open source 
+- Uma possibilidade é enviar o push da alteração para o meu repo e,  
+se ele estiver sido forkado do repo principal, é possível fazer  
+o pull request para o repo upstream desta feature que codei 
+- Quando o responsável pelo projeto responde com `-1`, por convenção  
+significa que a alteração feita no pull request não está de acordo  
+com algo dentro do projeto
+  - Geralmente a resposta com o -1 vem com um direcionamento do que  
+  fazer
+- Após fazer a alteração e fazer um push novamente, como a alteração  
+foi feita exatamente na linha onde o dono do repo principal comentou,  
+o github entende que, se aquela linha foi alterada, teoricamente o  
+problema foi resolvido: 
+
+![image](https://user-images.githubusercontent.com/29297788/44869917-23607b00-ac65-11e8-9a9a-2751ac1734af.png)
+
+- O github esconde os code reviews já resolvidos 
+- Pode ser um problema para ver se a pessoa escreveu mais comentários 
+
+# CI - Introdução à ferramentas de integração contínua 
+- Podem ser linkadas ou utilizadas com o GitHub
+- Ferramentas que mantém o deploy contínuo
+  - Não permite que os pull requests sejam mergeados se algum teste  
+  quebrar ou se o build do repo quebrar, por exemplo 
+  - Garantem que o código sempre funcione 
+  - Roda os testes e aoutras coisas que forem mandadas rodar no  
+  projeto e, se tudo correr bem, um badge `build passing` será  
+  exibido 
+  - Monitora o projeto e não deixa com que outras pessoas façam  
+  merge de algo que esteja quebrado 
+- Exemplos de CI:
+  - https://travis-ci.org/
+  - https://circleci.com/
