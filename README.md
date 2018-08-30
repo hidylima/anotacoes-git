@@ -1276,3 +1276,40 @@ na minha branch principal:
 - Executar um `git log` para verificar qual é o último commit 
 - Executar um `ls - la`  para visualizar os novos arquivos e  
 pastas
+
+## Tipos de workflow
+- Um tipo de workflow é criar uma branch apenas para desenvolvimento  
+('dev')
+  - Será a branch 'master' para desenvolvimento. A branch principal.  
+  Nada entrará nela se não estiver 100% ok 
+  - Deve ser criada no repo principal (upstream)
+- Para ter e manter a branch dev no meu repo local: 
+  - Executar um `git fetch upstream`
+    - Esse comando irá puxar para a memória o que houver de diferente  
+    no repo principal (upstream)
+    - Se a branch dev foi criada no repo upstream, ela será exibida  
+    como retorno deste comando, indicando que essa branch não existe  
+    no meu repo local
+  - Executar um `git checkout upstream/dev -b dev`, para que uma nova  
+  branch 'dev' seja criada baseada na branch dev do upstream 
+- Nunca fazer alterações diretamente nas branches dev ou master. Nunca  
+commitar alterações nelas
+  - Mas todo o código que eu fizer, deve ser baseado na branch dev 
+- A branch baseada na branch dev também deve ser subida para o repo  
+principal (upstream) no Github
+  - Mandar o pull request da branch: 
+    - Clicar no botão de fazer pull request
+    - Fazer com que a branch base seja a dev
+    - Editar título e mensagem do pull request 
+      - Marcar / solicitar que um outro desenvolvedor faça o code review  
+      do pull request
+      - Ao digitar `:`, sugestões de emojis irão ser exibidas 
+      - Novos comentários pode ser criados após o pull request ter sido  
+      enviado
+    - Lembrando: o pull request é uma requisição de pull 
+  - Após revisado, clicar no botão de fazer o merge 
+  - Deletar a branch que já foi mergeada com a dev (irá deletar apenas do  
+  github)
+- No terminal, voltar para a branch dev
+- Ao invés de fazer um merge da branch da feature que acabei de codar com  
+a branch dev, executar um `git fetch upstream` e um `git merge upstream/dev`
