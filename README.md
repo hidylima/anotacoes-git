@@ -1255,9 +1255,24 @@ origin, que é o meu repo principal (forkado), e irei ter esse
 segundo repo, que irá se chamar upstream
   - `git remote add upstream <httpsRepoPrincipal>` 
   - `git remote -v` para verificar se o repo origin é o forkado  
-  e o upstream é o repo principal (que possui outro dono)
+  e o upstream é o repo principal (que possui outro dono e que  
+  o time inteiro irá trabalhar)
   - Dessa forma, se eu tiver permissão, posso enviar alterações  
   diretamente para o upstream do outro dono. Se eu não tiver  
   permissão, posso enviar as alterações para o meu repo forkado  
   do github (origin) e depois enviar pull request para o repo  
-  upstream 
+  upstream
+- Para obter as alterações atualizados do repo upstream, ou seja,  
+sempre ter a última versão, para que eu comece a trabalhar com  
+esse repo, utilizar o comando que irá baixar na memória do git  
+todas as atualizações do repo principal (upstream):
+  - `git fetch upstream`
+    - Irá mostrar quais são as alterações das branchs do repo  
+    principal que eu não tenho localmente 
+    - Agora a memória local do git foi atualizada 
+- Fazer um merge da branch de onde quero pegar a atualização  
+na minha branch principal: 
+  - `git merge upstream/master`
+- Executar um `git log` para verificar qual é o último commit 
+- Executar um `ls - la`  para visualizar os novos arquivos e  
+pastas
